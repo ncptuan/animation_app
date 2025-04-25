@@ -46,7 +46,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     // final model = state.model as WelcomeDataModel;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Dating app"),
+        title: const Text("test app"),
       ),
       body: const Padding(
         padding: EdgeInsets.all(16),
