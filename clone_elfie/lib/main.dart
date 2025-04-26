@@ -3,6 +3,7 @@ import 'package:lottie/lottie.dart';
 
 import 'app_dependencies.dart';
 import 'route/route.dart';
+import 'style/style.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -26,7 +27,8 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> with SingleTickerProviderStateMixin {
+class _SplashScreenState extends State<SplashScreen>
+    with SingleTickerProviderStateMixin {
   late final AnimationController _controller;
 
   @override
@@ -77,10 +79,7 @@ class MyApp extends StatelessWidget {
     final appRouter = AppRouter();
     return MaterialApp.router(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: MyTheme.lightTheme(),
       routerConfig: appRouter.config(),
     );
   }

@@ -5,24 +5,21 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../app_dependencies.dart';
 import '../bloc/bloc.dart';
 import '../core/core.dart';
-import '../models/model.dart';
-import '../route/router.gr.dart';
 import '../widget/widget.dart';
 
 @RoutePage()
-class WelcomeScreen extends StatefulWidget {
-  const WelcomeScreen({super.key});
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
 
   @override
-  State<WelcomeScreen> createState() => _WelcomeScreenState();
+  State<HomeScreen> createState() => _HomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _HomeScreenState extends State<HomeScreen> {
   final WelcomeBloc bloc = AppDependencies.injector.get<WelcomeBloc>();
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     bloc.initState();
   }
@@ -44,27 +41,30 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   Widget buildContent(BuildContext context, LoadedState state) {
     // final model = state.model as WelcomeDataModel;
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("test app"),
-      ),
-      body: const Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Welcome",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
+    return const Scaffold(
+      appBar: CustomAppBar(),
+      body: Stack(
+        children: [
+          AnimatedBackground(),
+          Padding(
+            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+            child: Column(
+              children: [
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        HightLightWidget(),
+                        SizedBox(height: 20),
+                        MyPlanWidget(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-            
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
