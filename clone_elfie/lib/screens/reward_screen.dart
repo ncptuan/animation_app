@@ -9,9 +9,38 @@ class RewardScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
     return Scaffold(
-      appBar: AppBar(title: const Text('Reward')),
-      body: const Center(child: Text('Reward Screen')),
+      body: Stack(
+        children: [
+          const AnimatedBackground(),
+          // Main content
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  // Title
+                  Text(
+                    "We're working on it",
+                    style: theme.primaryTextTheme.labelLarge,
+                  ),
+
+                  const SizedBox(height: 10),
+
+                  // Subtext
+                  Text(
+                    "Please wait a moment",
+                    style: theme.textTheme.displayLarge,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

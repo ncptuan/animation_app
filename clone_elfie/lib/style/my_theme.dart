@@ -54,7 +54,13 @@ class MyTheme {
           fontFamily: fontFamily,
           color: MyColors.whiteColor,
           fontSize: Dimens.textSize16,
-          fontWeight: FontWeight.w400,
+          fontWeight: FontWeight.w700,
+        ),
+        labelLarge: TextStyle(
+          fontFamily: fontFamily,
+          color: MyColors.primaryColor,
+          fontSize: Dimens.textSize27,
+          fontWeight: FontWeight.w800,
         ),
       ),
       textTheme: const TextTheme(
@@ -74,6 +80,18 @@ class MyTheme {
           fontFamily: fontFamily,
           color: MyColors.accentColor,
           fontSize: Dimens.textSize16,
+          fontWeight: FontWeight.w400,
+        ),
+        bodySmall: TextStyle(
+          fontFamily: fontFamily,
+          color: MyColors.blackColor,
+          fontSize: Dimens.textSize16,
+          fontWeight: FontWeight.w400,
+        ),
+        labelSmall: TextStyle(
+          fontFamily: fontFamily,
+          color: MyColors.accentColor,
+          fontSize: Dimens.textSize14,
           fontWeight: FontWeight.w400,
         ),
       ),

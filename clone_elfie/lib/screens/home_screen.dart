@@ -46,20 +46,34 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: CustomAppBar(
         onClickAddButton: () {},
       ),
-      body: const Stack(
+      body: Stack(
         children: [
-          AnimatedBackground(),
+          const AnimatedBackground(),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 24),
+            padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 24),
             child: Column(
               children: [
                 Expanded(
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
-                        HightLightWidget(),
-                        SizedBox(height: 20),
-                        MyPlanWidget(),
+                        const HightLightWidget(),
+                        const SizedBox(height: 20),
+                        const TitleContent(),
+                        const SizedBox(height: 16),
+                        ListView.separated(
+                          physics: const NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemBuilder: (_, index) {
+                            return const PlanItemWidget();
+                          },
+                          separatorBuilder: (BuildContext context, int index) {
+                            return const SizedBox(
+                              height: 16,
+                            );
+                          },
+                          itemCount: 5,
+                        ),
                       ],
                     ),
                   ),
