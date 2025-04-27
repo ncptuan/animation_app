@@ -3,6 +3,8 @@ import 'package:clone_elfie/style/style.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
+import '../route/router.gr.dart';
+
 @RoutePage()
 class ExploreScreen extends StatelessWidget {
   const ExploreScreen({super.key});
@@ -22,7 +24,7 @@ class ExploreScreen extends StatelessWidget {
               icon: const Icon(Icons.arrow_back_ios_new,
                   color: MyColors.blackColor),
               onPressed: () {
-                Navigator.of(context).pop();
+                context.router.push(const PersistentNavigationRoute());
               },
             ),
             const SizedBox(width: 8),
@@ -128,7 +130,9 @@ class MapIntroduceWidget extends StatelessWidget {
             width: double.infinity,
             height: 56,
             child: ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                context.router.navigate(const PresentMapRoute());
+              },
               style: ElevatedButton.styleFrom(
                 backgroundColor: MyColors.blackColor,
                 shape: RoundedRectangleBorder(
