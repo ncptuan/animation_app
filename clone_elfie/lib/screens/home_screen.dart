@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:clone_elfie/route/router.gr.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -16,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  final WelcomeBloc bloc = AppDependencies.injector.get<WelcomeBloc>();
+  final HomeBloc bloc = AppDependencies.injector.get<HomeBloc>();
 
   @override
   void initState() {
@@ -40,10 +41,12 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget buildContent(BuildContext context, LoadedState state) {
-    // final model = state.model as WelcomeDataModel;
-    return const Scaffold(
-      appBar: CustomAppBar(),
-      body: Stack(
+    // final model = state.model as HomeDataModel;
+    return Scaffold(
+      appBar: CustomAppBar(
+        onClickAddButton: () {},
+      ),
+      body: const Stack(
         children: [
           AnimatedBackground(),
           Padding(

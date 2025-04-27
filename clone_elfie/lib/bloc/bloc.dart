@@ -1,3 +1,3 @@
-export 'welcome_screen_bloc/welcome_screen_bloc.dart';
-export 'chat_screen_bloc/chat_bloc.dart';
+export 'home_screen_bloc/home_screen_bloc.dart';
 export 'bloc_dependencies.dart';
+export 'map_screen_bloc/map_screen_bloc.dart';

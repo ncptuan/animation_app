@@ -1,13 +1,12 @@
-
 import '../../core/core.dart';
 import '../../models/model.dart';
 
-class WelcomeBloc extends BaseCubit<WelcomeDataModel, WelcomeDataParam> {
-  WelcomeBloc()
+class HomeBloc extends BaseCubit<HomeDataModel, HomeDataParam> {
+  HomeBloc()
       : super(
           InitState(),
-          model: WelcomeDataModel(selectWordLength: 5),
-          param: WelcomeDataParam(),
+          model: HomeDataModel(selectWordLength: 5),
+          param: HomeDataParam(),
         );
 
   @override

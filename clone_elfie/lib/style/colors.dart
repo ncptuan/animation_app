@@ -9,9 +9,7 @@ class MyColors {
   static const rewardBottomRightColor = Color.fromRGBO(136, 145, 229, 1);
   static const whiteColor = Color.fromRGBO(255, 255, 255, 1.0);
   static const blackColor = Color.fromRGBO(0, 0, 0, 1);
-
-  // static const activeColor = Color.fromRGBO(0, 230, 118, 1);
-
+  static const surfaceColor = Color.fromRGBO(247, 247, 252, 1);
   static const greyColor = Color.fromRGBO(228, 228, 228, 1);
   static const accentColor = Color.fromRGBO(163, 163, 163, 1);
   static const lightColor = Color.fromRGBO(128, 129, 145, 1);

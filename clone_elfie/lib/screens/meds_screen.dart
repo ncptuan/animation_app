@@ -1,8 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../widget/widget.dart';
-
 @RoutePage()
 class MedsScreen extends StatelessWidget {
   const MedsScreen({super.key});

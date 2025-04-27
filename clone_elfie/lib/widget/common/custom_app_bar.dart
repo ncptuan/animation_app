@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import '../widget.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({super.key});
+  final VoidCallback? onClickAddButton;
+
+  const CustomAppBar({super.key, this.onClickAddButton});
 
   @override
   Size get preferredSize => const Size.fromHeight(60);
@@ -42,9 +44,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         IconButton(
           icon: const Icon(Icons.add_circle_outline, color: Colors.black),
-          onPressed: () {
-            // Handle add action
-          },
+          onPressed: onClickAddButton,
         ),
       ],
     );
