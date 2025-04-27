@@ -3,7 +3,20 @@ import 'package:flutter/material.dart';
 import '../../style/style.dart';
 
 class HightLightWidget extends StatelessWidget {
-  const HightLightWidget({super.key});
+  final String? image;
+  final String? title;
+  final String? subTitle;
+  final String? logoImage;
+  final String? unlockTime;
+
+  const HightLightWidget({
+    super.key,
+    this.image,
+    this.title,
+    this.subTitle,
+    this.logoImage,
+    this.unlockTime,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +44,7 @@ class HightLightWidget extends StatelessWidget {
               height: 100,
               width: 130,
               child: Image.asset(
-                'assets/images/reward_hightlight.jpg',
+                image ?? 'assets/images/reward_hightlight.jpg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -44,13 +57,13 @@ class HightLightWidget extends StatelessWidget {
               Row(
                 children: [
                   Image.asset(
-                    'assets/images/vietnam_flag.png',
+                    logoImage ?? 'assets/images/vietnam_flag.png',
                     height: 20,
                     width: 20,
                   ),
                   const SizedBox(width: 3),
                   Text(
-                    'Joe • Cairo',
+                    title ?? 'Joe • Cairo',
                     style: theme.primaryTextTheme.displayMedium,
                   ),
                 ],
@@ -67,7 +80,7 @@ class HightLightWidget extends StatelessWidget {
                   SizedBox(
                     width: 150,
                     child: Text(
-                      'Redeemed 23 minutes of your time',
+                      unlockTime ?? 'Redeemed 23 minutes of your time',
                       style: theme.primaryTextTheme.bodySmall,
                       overflow: TextOverflow.ellipsis,
                       maxLines: 1,
@@ -77,7 +90,7 @@ class HightLightWidget extends StatelessWidget {
               ),
               const SizedBox(height: 6),
               Text(
-                'April Surprise',
+                subTitle ?? 'April Surprise',
                 style: theme.primaryTextTheme.bodySmall,
               ),
             ],

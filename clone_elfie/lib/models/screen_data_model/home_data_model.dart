@@ -1,7 +1,12 @@
+import 'package:clone_elfie/models/domain_model/plan_model_data.dart';
+import 'package:clone_elfie/models/model.dart';
+
 class HomeDataModel {
-  int selectWordLength;
+  List<PlanModelData>? planList;
+  HightLightModel? hightLightComponent;
   HomeDataModel({
-    required this.selectWordLength,
+    this.planList,
+    this.hightLightComponent,
   });
 }
 
