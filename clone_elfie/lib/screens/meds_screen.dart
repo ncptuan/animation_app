@@ -14,7 +14,8 @@ class MedsScreen extends StatefulWidget {
 }
 
 class _MedsScreenState extends State<MedsScreen> {
-  final DateTime _focusedDay = DateTime.now();
+  late DateTime _currentDay;
+  DateTime _focusedDay = DateTime.now();
   DateTime? _selectedDay;
   final Map<String, String> _scheduleData = {
     '2025-04-24': 'Take Vitamin C',
@@ -27,7 +28,7 @@ class _MedsScreenState extends State<MedsScreen> {
   @override
   void initState() {
     super.initState();
-    _selectedDay = _focusedDay;
+    _currentDay = _focusedDay;
   }
 
   @override
@@ -113,6 +114,7 @@ class _MedsScreenState extends State<MedsScreen> {
           onDaySelected: (selectedDay, focusedDay) {
             setState(() {
               _selectedDay = selectedDay;
+              _focusedDay = focusedDay;
             });
           },
           calendarFormat: CalendarFormat.week,
@@ -159,7 +161,7 @@ class _MedsScreenState extends State<MedsScreen> {
           Padding(
             padding: const EdgeInsets.only(bottom: 8),
             child: Text(
-              isSameDay(_selectedDay, _focusedDay)
+              isSameDay(_selectedDay, _currentDay)
                   ? "Today"
                   : _selectedDay!.toLocal().toString().split(' ')[0],
               style: theme.textTheme.bodyMedium?.copyWith(
