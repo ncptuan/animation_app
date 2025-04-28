@@ -16,7 +16,6 @@ Clone Elfie is a Flutter-based application designed to showcase advanced UI/UX d
 - **State Management**: Implements `Bloc` for predictable state transitions and separation of concerns.
 - **Cross-Platform Support**: Runs seamlessly on Android, iOS, Web, macOS, Linux, and Windows.
 - **Customizable UI**: Uses reusable widgets and models for dynamic content rendering.
-- **Localization Ready**: Supports multiple languages and regions.
 - **Asset Management**: Organized assets for images, icons, and other resources.
 
 ---
